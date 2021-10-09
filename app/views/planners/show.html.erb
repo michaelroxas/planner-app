@@ -8,10 +8,17 @@
 <%= link_to 'Edit', edit_planner_path(@planner) %> |
 <%= link_to 'Back', planners_path %>
 
-<p><strong>Add task</strong></p>
+<h2>Tasks</h2>
+<% @planner.tasks.each do |task| %>
+  <p>
+    <strong>O</strong>
+    <%= task.task %>
+  </p>
+<% end %>
+
 <%= form_with model: [ @planner, @planner.tasks.build ] do |form| %>
   <p>
-    <%= form.label :task %><br>
+    <p><strong>Add task</strong></p>
     <%= form.text_field :task %>
   </p>
   <p>
