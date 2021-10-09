@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Planners</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @planners.each do |planner| %>
+      <tr>
+        <td><%= planner.category %></td>
+        <td><%= link_to 'Show', planner %></td>
+        <td><%= link_to 'Edit', edit_planner_path(planner) %></td>
+        <td><%= link_to 'Destroy', planner, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Planner', new_planner_path %>

@@ -1,0 +1,22 @@
+<%= form_with(model: planner) do |form| %>
+  <% if planner.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(planner.errors.count, "error") %> prohibited this planner from being saved:</h2>
+
+      <ul>
+        <% planner.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :category %>
+    <%= form.text_field :category %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
