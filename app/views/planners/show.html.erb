@@ -7,3 +7,14 @@
 
 <%= link_to 'Edit', edit_planner_path(@planner) %> |
 <%= link_to 'Back', planners_path %>
+
+<p><strong>Add task</strong></p>
+<%= form_with model: [ @planner, @planner.tasks.build ] do |form| %>
+  <p>
+    <%= form.label :task %><br>
+    <%= form.text_field :task %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
