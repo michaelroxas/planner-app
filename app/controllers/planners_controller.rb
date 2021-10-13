@@ -1,5 +1,6 @@
 class PlannersController < ApplicationController
   before_action :set_planner, only: %i[ show edit update destroy ]
+  # before_filter :authenticate_user!, except: [:index, :show]
 
   # GET /planners or /planners.json
   def index
